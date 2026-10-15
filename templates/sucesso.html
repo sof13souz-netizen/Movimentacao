@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CredMais | Minha Conta</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" type="image/png" href="../static/uploads/LogoSoloCrediMais.png">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="{{ url_for('inicio') }}" class="logo"> CredMais </a>
+    </header>
+
+    <main class="conteudo">
+        <section class="hero">
+
+            <h1>Olá, {{ session["usuario_nome"] }}!</h1>
+            <p> Seja bem-vindo ao CredMais. </p>
+
+            <div class="hero-botoes">
+                <a href="{{ url_for('perfil') }}" class="btn btn-primario"> Editar minhas informações </a>
+                <a href="{{ url_for('logout') }}" class="btn btn-secundario"> Sair </a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

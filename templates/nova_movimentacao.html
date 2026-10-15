@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimentação - CredMais</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/movimentacao.css') }}">
+    <link rel="icon" type="image/png" href="../static/uploads/LogoSoloCrediMais.png">
+</head>
+<body>
+
+    <header class="topo">
+
+        <div class="marca">
+            <img src="{{ url_for('static', filename='uploads/logo.png') }}" alt="CredMais" class="logo" height="60px">
+        </div>
+
+        <nav class="menu">
+            <a href="{{ url_for('sucesso') }}" class="link-menu">Dashboard</a>
+            <a href="#" class="link-menu">Perfil</a>
+            <a href="#" class="link-menu">Simulação</a>
+            <a href="#" class="link-menu">Empréstimos</a>
+            <a href="#" class="link-menu selecionado">Movimentações</a>
+        </nav>
+
+    </header>
+
+    <main>
+        <section>
+            <div class="icone-calculadora">
+                <img src="{{ url_for('static', filename='uploads/icone-calc-dashboard.png') }}">
+            </div>
+
+            <div>
+                <h1>Nova movimentação</h1>
+                <p>Informe os dados e adicione uma nova despesa ou receita</p>
+            </div>
+        </section>
+
+        <div>
+            <section>
+                <form>
+                    <div class="campo-mov">
+                        <label for="valor">Valor da Movimentação</label>
+                        <input type="number" name="valor_mov" id="valor_mov" value="{{ valor_mov }}" required>
+                    </div>
+
+
+                    <div class="campo-mov">
+                        <label for="tipo">Descrição da movimentação</label>
+                        <input type="text" name="descricao_mov" id="nome" maxlength="254" value="{{ descricao_mov }}" required>
+                    </div>
+
+                    <div class="opcoes-tipo">
+
+                        <label class="opcao"> Receita </label>
+                        <input type="radio" name="receita" value="0">
+
+                        <label class="opcao"> Despesa </label>
+                        <input type="radio" name="despesa" value="1">
+
+                    </div>
+
+                    <button type="submit" class="botao">Registrar</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+</body>
+</html>
